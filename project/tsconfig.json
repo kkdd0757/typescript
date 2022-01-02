@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "allowJs": true, 
+    "target": "ES5",
+    "outDir" : "./built",
+    "moduleResolution": "Node",
+    "lib": ["ES2015", "DOM", "DOM.Iterable"],
+    "noImplicitAny": true
+  },
+  "include": ["./src/**/*"], // 해당 디렉토리의 파일들을 ts -> js로 변경해줄것.
+  "exclude": ["node_modules","dist"]
+}
