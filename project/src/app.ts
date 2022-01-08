@@ -70,15 +70,24 @@ function startApp(): void {
   initEvents();
 }
 
+// const a: Element;
+// const b : HTMLElement;
+// const c : HTMLDivElement;
+
+// const evt1 : Event;
+// const evt2: UIEvent;
+// const evt3: MouseEvent;
+
 // events
-function initEvents(): void {
+function initEvents() {
+  if (!rankList) return;
   rankList.addEventListener('click', handleListClick);
 }
 
-async function handleListClick(event: MouseEvent) {
+async function handleListClick(event: Event) {
   let selectedId;
   if (event.target instanceof HTMLParagraphElement || event.target instanceof HTMLSpanElement) {
-    selectedId = event.target.parentElement.id;
+    selectedId = event.target.parentElement ? event.target.parentElement.id : undefined;
   }
   if (event.target instanceof HTMLLIElement) {
     selectedId = event.target.id;
